@@ -1,4 +1,10 @@
-import { INCREMENT, DELETE_ARTICLE, ADD_COMMENT, LOAD_ALL_ARTICLES, LOAD_ARTICLE,
+import {
+    INCREMENT,
+    DELETE_ARTICLE,
+    ADD_COMMENT,
+    LOAD_ALL_ARTICLES,
+    LOAD_ARTICLE,
+    LOAD_ARTICLE_COMMENTS,
     START, SUCCESS, FAIL } from '../constants'
 import $ from 'jquery'
 
@@ -52,3 +58,19 @@ export function loadArticleById(id) {
             }))
     }
 }
+
+export function loadCommentsByArticleId(id) {
+
+    return (dispatch, getState) => {
+        console.log('AC ---', id, getState().comments)
+        if (getState().comments.getIn(['entities', id, 'text'])) return null
+        $.get((`/api/comment?article=${id}`)
+            .done(response => dispatch({
+                type: LOAD_ARTICLE_COMMENTS + SUCCESS,
+                payload: { id },
+                response
+            }))
+        )
+    }
+}
+

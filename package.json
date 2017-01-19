@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/romabelka/js_ru_23_09_21_30"
+    "url": "git+https://github.com/mdolzhko/js_ru_16_01"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/romabelka/js_ru_23_09_21_30"
+    "url": "https://github.com/mdolzhko/js_ru_16_01"
   },
-  "homepage": "https://github.com/romabelka/js_ru_23_09_21_30",
+  "homepage": "https://github.com/mdolzhko/js_ru_16_01",
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",

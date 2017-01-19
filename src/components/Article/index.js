@@ -13,7 +13,10 @@ class Article extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (!this.props.isOpen && nextProps.isOpen) nextProps.loadArticleById(nextProps.article.id)
+        if (!this.props.isOpen && nextProps.isOpen) {
+            nextProps.loadArticleById(nextProps.article.id)
+        }
+
     }
 
     componentDidMount() {
@@ -39,8 +42,7 @@ class Article extends Component {
                 <CSSTransition
                     transitionName="article-body"
                     transitionEnterTimeout={500}
-                    transitionLeaveTimeout={300}
-                >
+                    transitionLeaveTimeout={300} >
                     {this.getBody()}
                 </CSSTransition>
             </div>
